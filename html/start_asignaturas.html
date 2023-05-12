@@ -1,0 +1,61 @@
+<!-- start_asignaturas.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Información de asignaturas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+  <form method="post" action="/asignaturas">
+    <legend>Información de asignaturas</legend>
+    <fieldset  class="d-grid" >
+      <label for="asignatura">Selecciona una asignatura:</label>
+      <select id="asignatura" name="asignatura" class="col-form-label col-form-label-sm">
+        <option value="matematicas">Matemáticas</option>
+        <option value="ciencias">Ciencia</option>
+        <option value="historia">Historia</option>
+      </select>
+      <label for="profesor" class="col-form-label col-form-label-sm">profesor:</label>
+      <input type="text" id="procesor" name="profesor" >
+      <div id="atributos">
+        <label for="nivel" class="col-form-label col-form-label-sm">nivel:</label>
+        <input type="text" id="nivel" name="nivel" >
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Revisar</button>
+  </form>
+
+  <script>
+    const asignaturaSelect = document.getElementById("asignatura");
+    const atributosDiv = document.getElementById("atributos");
+
+    function mostrarAtributos() {
+      const asignatura = asignaturaSelect.value;
+      atributosDiv.innerHTML = "";
+
+      if (asignatura === "matematicas") {
+        atributosDiv.innerHTML += `
+        <label for="nivel" class="col-form-label col-form-label-sm">Nivel:</label>
+        <input type="text" id="nivel" name="nivel" >
+          `;
+      } else if (asignatura === "ciencias") {
+        atributosDiv.innerHTML += `
+            <label for="laboratorio" class="col-form-label col-form-label-sm">Laboratorio:</label>
+            <input type="text" id="laboratorio" name="laboratorio">
+          `;
+      } else if (asignatura === "historia") {
+        atributosDiv.innerHTML += `
+            <label for="epoca" class="col-form-label col-form-label-sm">Epoca:</label>
+            <input type="text" id="epoca" name="epoca">
+          `;
+      }
+    }
+    asignaturaSelect.addEventListener("change", mostrarAtributos);
+  </script>
+</body>
+
+</html>

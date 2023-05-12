@@ -1,0 +1,36 @@
+<!--asignaturas.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información de la asignatura</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información de asignaturas</legend>
+        <div class="form-group row">
+            {% if asignatura %}
+            <p><strong>Nombre:</strong> {{ asignatura.nombre }}</p>
+            <p><strong>Profesor:</strong> {{ asignatura.profesor }}</p>
+            {% if (asignatura.Nombre == "matemáticas") %}
+            <p><strong>Nivel:</strong> {{ asignatura.nivel }}</p>
+            {% elif (asignatura.Nombre== "ciencia") %}
+            <p><strong>Laboratorio:</strong> {{ asignatura.laboratorio }}</p>
+            {% elif (asignatura.Nombre == "historia") %}
+            <p><strong>Época:</strong> {{ asignatura.epoca }}</p>
+            {% endif %}
+            <p><strong>Descripcion:</strong> {{ asignatura.descripcion() }}</p>
+            {% else %}
+            <p>La asignatura seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas asignaturas</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>
