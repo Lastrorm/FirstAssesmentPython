@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from Asignaturas import *
+from clases.Asignaturas import *
 
 app = Flask(__name__, template_folder='html')
 
