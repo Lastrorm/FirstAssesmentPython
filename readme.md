@@ -13,3 +13,4 @@ Utilización del programa
 - Elegir en el menú qué asignatura quieres mostrar
 - Introducir un nombre de profesor en el textbox con nombre ```profesor```
 - Introducir el atributo adicional por cada asignatura: ```Nivel```, ```Laboratorio``` o ```Epoca```
+- Hacer click en el botón ```Revisar```
