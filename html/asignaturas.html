@@ -16,11 +16,11 @@
             {% if asignatura %}
             <p><strong>Nombre:</strong> {{ asignatura.nombre }}</p>
             <p><strong>Profesor:</strong> {{ asignatura.profesor }}</p>
-            {% if (asignatura.Nombre == "matemáticas") %}
+            {% if (asignatura.nombre == "matematicas") %}
             <p><strong>Nivel:</strong> {{ asignatura.nivel }}</p>
-            {% elif (asignatura.Nombre== "ciencia") %}
+            {% elif (asignatura.nombre== "ciencias") %}
             <p><strong>Laboratorio:</strong> {{ asignatura.laboratorio }}</p>
-            {% elif (asignatura.Nombre == "historia") %}
+            {% elif (asignatura.nombre == "historia") %}
             <p><strong>Época:</strong> {{ asignatura.epoca }}</p>
             {% endif %}
             <p><strong>Descripcion:</strong> {{ asignatura.descripcion() }}</p>
